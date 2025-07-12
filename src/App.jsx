@@ -1,12 +1,12 @@
-import * as THREE from 'three'
-import React, { Suspense, useEffect, useState } from 'react'
+import { sRGBEncoding, Vector3 } from 'three'
+import { Suspense, useEffect, useState } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { Reflector, Text, useTexture, useGLTF } from '@react-three/drei'
 
 export default function App() {
   return (
     <div style={{ width: '100vw', height: '100vh', position: 'relative' }}>
-      <Canvas concurrent gl={{ alpha: false }} pixelRatio={[1, 1.5]} camera={{ position: [0, 3, 100], fov: 14, far:100 }}>
+      <Canvas concurrent="true" gl={{ alpha: false }}  camera={{ position: [0, 3, 100], fov: 14, far:100 }}>
         <color attach="background" args={['black']} />
         <fog attach="fog" args={['black', 28, 33]} />
         <Suspense fallback={null}>
@@ -37,7 +37,7 @@ function VideoText(props) {
     <Text font="/Inter-Bold.woff" fontSize={2} letterSpacing={-0.08} {...props}>
       biswanath
       <meshBasicMaterial toneMapped={false}>
-        <videoTexture attach="map" args={[video]} encoding={THREE.sRGBEncoding} />
+        <videoTexture attach="map" args={[video]} encoding={sRGBEncoding} />
       </meshBasicMaterial>
     </Text>
   )
@@ -53,12 +53,12 @@ function Ground() {
 }
 
 function Intro() {
-  const [vec] = useState(() => new THREE.Vector3())
+  const [vec] = useState(() => new Vector3())
   return useFrame((state) => {
     state.scene.fog.near = 36000/window.innerWidth
     state.scene.fog.far = 36000/window.innerWidth + 10
     // state.scene.fog.far += 0.01
-    console.log(state.scene.fog)
+    // console.log(state.scene.fog)
     state.camera.position.lerp(vec.set(state.mouse.x * 5, 3 + state.mouse.y * 2, 36000/window.innerWidth), 0.05)
     state.camera.lookAt(0, 0, 0)
   })

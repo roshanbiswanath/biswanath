@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { 
   FaEnvelope, 
   FaGithub, 
@@ -117,7 +117,7 @@ export default function Footer() {
                     {social.img ? (
                       <img src={social.img} alt={social.label} style={{ width: 22, height: 22, objectFit: 'contain', filter: 'invert(1)' }} />
                     ) : (
-                      React.createElement(social.icon, { size: 18, color: "#ffffff" })
+                      social.icon && <social.icon size={18} color="#ffffff" />
                     )}
                   </div>
                 );
