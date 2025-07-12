@@ -1,3 +1,5 @@
+import Footer from './Footer';
+
 export default function About() {
   return (
     <div
@@ -248,29 +250,6 @@ export default function About() {
             <button
               style={{
                 padding: "12px 30px",
-                backgroundColor: "#007acc",
-                color: "white",
-                border: "none",
-                borderRadius: "8px",
-                cursor: "pointer",
-                fontSize: "16px",
-                fontWeight: "500",
-                transition: "all 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = "#005a99";
-                e.target.style.transform = "translateY(-2px)";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = "#007acc";
-                e.target.style.transform = "translateY(0)";
-              }}
-            >
-              Get in Touch
-            </button>
-            <button
-              style={{
-                padding: "12px 30px",
                 backgroundColor: "transparent",
                 color: "#ffffff",
                 border: "1px solid rgba(255, 255, 255, 0.3)",
@@ -294,6 +273,9 @@ export default function About() {
           </div>
         </div>
       </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }
