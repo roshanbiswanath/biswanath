@@ -243,7 +243,7 @@ export default function About() {
             }}
           >
             From award-winning VR experiences to enterprise-scale systems, I'm passionate 
-            about turning ambitious ideas into reality. Currently interning at ServiceNow 
+            about turning ambitious ideas into reality. Currently working at ServiceNow 
             and always excited to collaborate on cutting-edge projects.
           </p>
           <div style={{ display: "flex", gap: "20px", justifyContent: "center" }}>
