@@ -7,10 +7,12 @@ import Projects from './Projects'
 import Footer from './Footer'
 import ErrorBoundary from './ErrorBoundary'
 import LoadingScreen from './LoadingScreen'
+import ScrollToTop from './ScrollToTop'
 
 createRoot(document.querySelector('#root')).render(
   <>
     <LoadingScreen />
+    <ScrollToTop />
     <ErrorBoundary>
       <div style={{ position: 'relative', height: '100vh' }}>
         <App />
