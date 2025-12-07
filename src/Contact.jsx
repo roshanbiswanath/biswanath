@@ -107,10 +107,10 @@ export default function Contact({ isOpen, onClose }) {
             transition: 'all 0.3s ease',
           }}
           onMouseEnter={(e) => {
-            e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+            e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
           }}
           onMouseLeave={(e) => {
-            e.target.style.backgroundColor = 'transparent';
+            e.currentTarget.style.backgroundColor = 'transparent';
           }}
         >
           ×
@@ -172,14 +172,14 @@ export default function Contact({ isOpen, onClose }) {
                   fontSize: '24px',
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
-                  e.target.style.transform = 'translateY(-3px) scale(1.1)';
-                  e.target.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.15)';
+                  e.currentTarget.style.transform = 'translateY(-3px) scale(1.1)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
-                  e.target.style.transform = 'translateY(0) scale(1)';
-                  e.target.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                  e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
                 }}
               >
                 {method.icon}
@@ -343,12 +343,12 @@ export default function Contact({ isOpen, onClose }) {
                       marginTop: '10px',
                     }}
                     onMouseEnter={(e) => {
-                      e.target.style.backgroundColor = '#005a99';
-                      e.target.style.transform = 'translateY(-2px)';
+                      e.currentTarget.style.backgroundColor = '#005a99';
+                      e.currentTarget.style.transform = 'translateY(-2px)';
                     }}
                     onMouseLeave={(e) => {
-                      e.target.style.backgroundColor = '#007acc';
-                      e.target.style.transform = 'translateY(0)';
+                      e.currentTarget.style.backgroundColor = '#007acc';
+                      e.currentTarget.style.transform = 'translateY(0)';
                     }}
                   >
                     Send Message

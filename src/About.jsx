@@ -1,20 +1,16 @@
-import Footer from './Footer';
-
 export default function About() {
   return (
     <div
       id="about-section"
       style={{
-        position: "absolute",
-        top: "100vh",
-        left: 0,
+        position: "relative",
         width: "100%",
-        minHeight: "100vh",
         backgroundColor: "#0a0a0a",
         color: "#ffffff",
-        paddingTop: "80px",
-        paddingBottom: "80px",
-        zIndex: 10,
+        paddingTop: "60px",
+        paddingBottom: "20px",
+        boxSizing: "border-box",
+        overflowX: "hidden",
       }}
     >
       <div
@@ -22,6 +18,7 @@ export default function About() {
           maxWidth: "1200px",
           margin: "0 auto",
           padding: "0 40px",
+          boxSizing: "border-box",
         }}
       >
         <div
@@ -55,16 +52,13 @@ export default function About() {
               }}
             >
               <p style={{ marginBottom: "24px" }}>
-                Welcome! I'm Biswanath Patra, a developer passionate about building immersive digital experiences. My work ranges from WebVR applications showcased to thousands in Dubai to cutting-edge AR/VR and creative technology solutions.
+                I'm Biswanath Patra, a developer passionate about building immersive digital experiences. My expertise spans WebVR applications showcased in Dubai to cutting-edge AR/VR and ML-based solutions.
               </p>
               <p style={{ marginBottom: "24px" }}>
-                As Project Lead at Twinverse, I've architected MultiUser WebVR experiences, built AR Experience Builders that reduced development time by 95%, and optimized ML-based virtual try-on systems achieving 90% performance improvements. I'm passionate about creating technology that makes a real impact.
-              </p>
-              <p style={{ marginBottom: "24px" }}>
-                My projects have taken me from hackathons and open source to Dubai's Gitex Global Tech Summit and a presentation to President Putin in Russia. I love solving complex problems with innovative solutions.
+                As Project Lead at Twinverse, I architected MultiUser WebVR experiences, built AR tools that reduced development time by 95%, and optimized virtual try-on systems with 90% performance improvements.
               </p>
               <p>
-                Ready to bring your next ambitious project to life? Let's build something extraordinary together!
+                From hackathons to Gitex Global and presentations to world leaders—I solve complex problems with innovative solutions. Let's build something extraordinary together!
               </p>
             </div>
           </div>
@@ -83,14 +77,10 @@ export default function About() {
             </h3>
             <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
               {[
-                "WebXR Development (VR/AR Experiences, Unity, WebVR)",
-                "Full Stack Development (React, Node.js, Express.js, MongoDB)",
-                "Machine Learning & AI (PyTorch, Computer Vision, Virtual Try-On)",
-                "Backend Systems (Python, Flask, RESTful APIs, SQLite)",
-                "Cloud & DevOps (AWS Deployment, Performance Optimization)",
-                "Hardware Integration (Arduino, IoT, Sensor Systems)",
-                "Product Development (Design Thinking, Project Management)",
-                "3D Web Technologies (Three.js, WebGL, Interactive Experiences)"
+                "WebXR & 3D Web (VR/AR, Unity, Three.js, WebGL, Interactive Experiences)",
+                "Full Stack & Backend Development (React, Node.js, Express.js, Python, Flask, MongoDB, SQLite, RESTful APIs)",
+                "Machine Learning & AI (PyTorch, Computer Vision, Virtual Try-On, LLM-enabled Apps)",
+                "Hardware Integration (Arduino, esp32, IoT, Sensor Systems)"
               ].map((skill, index) => (
                 <div
                   key={index}
@@ -101,16 +91,18 @@ export default function About() {
                     borderRadius: "12px",
                     backdropFilter: "blur(10px)",
                     transition: "all 0.3s ease",
+                    wordBreak: "break-word",
+                    overflow: "hidden",
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
-                    e.target.style.borderColor = "rgba(255, 255, 255, 0.2)";
-                    e.target.style.transform = "translateY(-2px)";
+                    e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
+                    e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.2)";
+                    e.currentTarget.style.transform = "translateY(-2px)";
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = "rgba(255, 255, 255, 0.05)";
-                    e.target.style.borderColor = "rgba(255, 255, 255, 0.1)";
-                    e.target.style.transform = "translateY(0)";
+                    e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.05)";
+                    e.currentTarget.style.borderColor = "rgba(255, 255, 255, 0.1)";
+                    e.currentTarget.style.transform = "translateY(0)";
                   }}
                 >
                   <div
@@ -131,8 +123,8 @@ export default function About() {
         {/* Achievements section */}
         <div
           style={{
-            marginTop: "80px",
-            padding: "40px",
+            marginTop: "40px",
+            padding: "0px 40px 40px 40px",
             backgroundColor: "rgba(255, 255, 255, 0.02)",
             borderRadius: "20px",
             border: "1px solid rgba(255, 255, 255, 0.1)",
@@ -142,7 +134,8 @@ export default function About() {
             style={{
               fontSize: "32px",
               fontWeight: "600",
-              marginBottom: "30px",
+              marginBottom: "20px",
+              marginTop: "20px",
               color: "#ffffff",
               textAlign: "center",
             }}
@@ -152,22 +145,25 @@ export default function About() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))",
               gap: "30px",
             }}
           >
             {[
               {
                 title: "YouthX Unipreneur Award Winner",
-                description: "Won at Gitex Global Tech Summit 2022, Dubai for Twinverse project"
+                description: "Won at Gitex Global Tech Summit 2022, Dubai for Twinverse project",
+                image: "/ach1.jpg"
               },
               {
-                title: "Top 50 National Selection",
-                description: "Project selected in top 50 projects of India in ATL Marathon 2018"
+                title: "ATL Marathon Top 50 Project",
+                description: "Smart Water Dispenser Project selected in top 50 projects of India in ATL Marathon 2018",
+                image: "/ach2.jpg"
               },
               {
-                title: "International Experience & Presidential Recognition",
-                description: "Selected for AIM-Sirius Student Exchange Program, Sochi, Russia, and presented a project to President Putin."
+                title: "International Recognition",
+                description: "Selected for AIM-Sirius Student Exchange Program, Sochi, Russia, and presented a project to President Putin.",
+                image: "/ach3.jpg"
               }
             ].map((achievement, index) => (
               <div
@@ -178,16 +174,37 @@ export default function About() {
                   border: "1px solid rgba(255, 255, 255, 0.1)",
                   borderRadius: "12px",
                   transition: "all 0.3s ease",
+                  overflow: "hidden",
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = "rgba(255, 255, 255, 0.05)";
-                  e.target.style.transform = "translateY(-3px)";
+                  e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.05)";
+                  e.currentTarget.style.transform = "translateY(-3px)";
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = "rgba(255, 255, 255, 0.03)";
-                  e.target.style.transform = "translateY(0)";
+                  e.currentTarget.style.backgroundColor = "rgba(255, 255, 255, 0.03)";
+                  e.currentTarget.style.transform = "translateY(0)";
                 }}
               >
+                <div
+                  style={{
+                    width: "100%",
+                    height: "180px",
+                    marginBottom: "16px",
+                    borderRadius: "8px",
+                    overflow: "hidden",
+                    backgroundColor: "rgba(255, 255, 255, 0.05)",
+                  }}
+                >
+                  <img
+                    src={achievement.image}
+                    alt={achievement.title}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
                 <h4
                   style={{
                     fontSize: "18px",
@@ -215,7 +232,7 @@ export default function About() {
         {/* Contact section */}
         <div
           style={{
-            marginTop: "80px",
+            marginTop: "40px",
             textAlign: "center",
             padding: "40px",
             backgroundColor: "rgba(255, 255, 255, 0.03)",
@@ -246,36 +263,8 @@ export default function About() {
             about turning ambitious ideas into reality. Currently working at ServiceNow 
             and always excited to collaborate on cutting-edge projects.
           </p>
-          <div style={{ display: "flex", gap: "20px", justifyContent: "center" }}>
-            <button
-              style={{
-                padding: "12px 30px",
-                backgroundColor: "transparent",
-                color: "#ffffff",
-                border: "1px solid rgba(255, 255, 255, 0.3)",
-                borderRadius: "8px",
-                cursor: "pointer",
-                fontSize: "16px",
-                fontWeight: "500",
-                transition: "all 0.3s ease",
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
-                e.target.style.transform = "translateY(-2px)";
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.backgroundColor = "transparent";
-                e.target.style.transform = "translateY(0)";
-              }}
-            >
-              View Projects
-            </button>
-          </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

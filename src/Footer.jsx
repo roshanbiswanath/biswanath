@@ -4,7 +4,8 @@ import {
   FaGithub, 
   FaLinkedin, 
   FaTwitter, 
-  FaInstagram
+  FaInstagram,
+  FaWhatsapp
 } from 'react-icons/fa';
 
 export default function Footer() {
@@ -33,6 +34,7 @@ export default function Footer() {
 
   const socialLinks = [
     { icon: FaEnvelope, label: "Email", link: "mailto:roshanbiswanathpatra@gmail.com" },
+    { icon: FaWhatsapp, label: "WhatsApp", link: "https://wa.me/919861779629" },
     { icon: FaLinkedin, label: "LinkedIn", link: "https://linkedin.com/in/roshanbiswanath" },
     { icon: FaGithub, label: "GitHub", link: "https://github.com/roshanbiswanath" },
     { img: "/twinverse.ico", label: "Twinverse", link: "https://twinverse.in" },
@@ -43,7 +45,6 @@ export default function Footer() {
   return (
     <footer
       style={{
-        marginTop: "80px", // Add space before footer
         backgroundColor: "#0a0a0a",
         color: "#ffffff",
         padding: "40px 0 20px 0",
@@ -59,9 +60,10 @@ export default function Footer() {
       >
         {/* Main Footer Content */}
         <div
+          className="footer-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(280px, 100%), 1fr))",
             gap: "60px",
             marginBottom: "40px",
           }}
@@ -91,6 +93,15 @@ export default function Footer() {
                     key={index}
                     onClick={() => window.open(social.link, '_blank')}
                     title={social.label}
+                    role="button"
+                    tabIndex={0}
+                    aria-label={`Visit ${social.label}`}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        window.open(social.link, '_blank');
+                      }
+                    }}
                     style={{
                       width: "44px",
                       height: "44px",
@@ -139,9 +150,10 @@ export default function Footer() {
             </h3>
             <form onSubmit={handleSubmit}>
               <div
+                className="form-row"
                 style={{
                   display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(min(140px, 100%), 1fr))",
                   gap: "12px",
                   marginBottom: "12px",
                 }}
@@ -153,6 +165,7 @@ export default function Footer() {
                   value={formData.name}
                   onChange={handleInputChange}
                   required
+                  aria-label="Your name"
                   style={{
                     padding: "10px 14px",
                     backgroundColor: "rgba(255, 255, 255, 0.05)",
@@ -170,6 +183,7 @@ export default function Footer() {
                   value={formData.email}
                   onChange={handleInputChange}
                   required
+                  aria-label="Your email address"
                   style={{
                     padding: "10px 14px",
                     backgroundColor: "rgba(255, 255, 255, 0.05)",
@@ -188,6 +202,7 @@ export default function Footer() {
                 onChange={handleInputChange}
                 required
                 rows="3"
+                aria-label="Your message"
                 style={{
                   width: "100%",
                   padding: "10px 14px",
@@ -203,6 +218,7 @@ export default function Footer() {
               />
               <button
                 type="submit"
+                aria-label="Send message"
                 style={{
                   width: "100%",
                   padding: "10px",
@@ -216,10 +232,10 @@ export default function Footer() {
                   transition: "all 0.2s ease",
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.backgroundColor = "#f0f0f0";
+                  e.currentTarget.style.backgroundColor = "#f0f0f0";
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.backgroundColor = "#ffffff";
+                  e.currentTarget.style.backgroundColor = "#ffffff";
                 }}
               >
                 Send
@@ -230,6 +246,7 @@ export default function Footer() {
 
         {/* Footer Bottom */}
         <div
+          className="footer-bottom"
           style={{
             display: "flex",
             justifyContent: "space-between",
@@ -238,10 +255,12 @@ export default function Footer() {
             borderTop: "1px solid rgba(255, 255, 255, 0.08)",
             fontSize: "12px",
             color: "#666666",
+            flexWrap: "wrap",
+            gap: "10px",
           }}
         >
           <p>© 2025 Biswanath Patra</p>
-          <p>Built with React</p>
+          <p>Building for the future</p>
         </div>
       </div>
     </footer>
