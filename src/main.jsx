@@ -8,6 +8,7 @@ import Footer from './Footer'
 import ErrorBoundary from './ErrorBoundary'
 import LoadingScreen from './LoadingScreen'
 import ScrollToTop from './ScrollToTop'
+import { Analytics } from '@vercel/analytics/react'
 
 createRoot(document.querySelector('#root')).render(
   <>
@@ -22,5 +23,6 @@ createRoot(document.querySelector('#root')).render(
     <About />
     <Projects />
     <Footer />
+    <Analytics />
   </>
 )

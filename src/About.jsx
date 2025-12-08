@@ -124,7 +124,7 @@ export default function About() {
         <div
           style={{
             marginTop: "40px",
-            padding: "0px 40px 40px 40px",
+            padding: "0px 20px 40px 20px",
             backgroundColor: "rgba(255, 255, 255, 0.02)",
             borderRadius: "20px",
             border: "1px solid rgba(255, 255, 255, 0.1)",
