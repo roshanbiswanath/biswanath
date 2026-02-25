@@ -4,6 +4,7 @@ import App from './App'
 import Overlay from './Overlay'
 import About from './About'
 import Projects from './Projects'
+import Mentions from './Mentions'
 import Footer from './Footer'
 import ErrorBoundary from './ErrorBoundary'
 import LoadingScreen from './LoadingScreen'
@@ -22,6 +23,7 @@ createRoot(document.querySelector('#root')).render(
     </ErrorBoundary>
     <About />
     <Projects />
+    <Mentions />
     <Footer />
     <Analytics />
   </>

@@ -67,7 +67,7 @@ export default function Projects() {
         backgroundColor: "#0a0a0a",
         color: "#ffffff",
         paddingTop: "20px",
-        paddingBottom: "60px",
+        paddingBottom: "20px",
         boxSizing: "border-box",
         overflowX: "hidden",
       }}
@@ -94,7 +94,7 @@ export default function Projects() {
         >
           Featured Projects
         </h2>
-        
+
         <p
           style={{
             fontSize: "18px",
@@ -170,7 +170,7 @@ export default function Projects() {
               >
                 {project.title}
               </h3>
-              
+
               <p
                 style={{
                   fontSize: "15px",
