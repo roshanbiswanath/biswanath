@@ -5,7 +5,7 @@ export default function About() {
       style={{
         position: "relative",
         width: "100%",
-        backgroundColor: "#0a0a0a",
+        background: "linear-gradient(to bottom, #000000 0%, #0a0a0a 100%)",
         color: "#ffffff",
         paddingTop: "60px",
         paddingBottom: "20px",
@@ -259,8 +259,8 @@ export default function About() {
               margin: "0 auto 30px auto",
             }}
           >
-            From award-winning VR experiences to enterprise-scale systems, I'm passionate 
-            about turning ambitious ideas into reality. Currently working at ServiceNow 
+            From award-winning VR experiences to enterprise-scale systems, I'm passionate
+            about turning ambitious ideas into reality. Currently working at ServiceNow
             and always excited to collaborate on cutting-edge projects.
           </p>
         </div>

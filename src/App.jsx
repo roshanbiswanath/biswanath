@@ -5,8 +5,8 @@ import { Reflector, Text, useTexture, useGLTF } from '@react-three/drei'
 
 export default function App() {
   return (
-    <div style={{ width: '100vw', height: '100vh', position: 'relative' }}>
-      <Canvas concurrent="true" gl={{ alpha: false }}  camera={{ position: [0, 3, 100], fov: 14, far: 200 }}>
+    <div style={{ width: '100vw', height: '100vh', position: 'relative', backgroundColor: 'black' }}>
+      <Canvas gl={{ alpha: false }} camera={{ position: [0, 3, 100], fov: 14, far: 200 }}>
         <color attach="background" args={['black']} />
         <fog attach="fog" args={['black', 28, 33]} />
         <Suspense fallback={null}>
@@ -21,6 +21,19 @@ export default function App() {
           <Intro />
         </Suspense>
       </Canvas>
+      {/* Seamless Fade-Out Mask */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          width: '100%',
+          height: '150px',
+          background: 'linear-gradient(to bottom, transparent 0%, #000000 100%)',
+          pointerEvents: 'none',
+          zIndex: 10,
+        }}
+      />
     </div>
   )
 }
@@ -57,46 +70,46 @@ function Intro() {
   return useFrame((state) => {
     const width = window.innerWidth
     const height = window.innerHeight
-    
+
     // The 3D text "biswanath" - tweaked to match actual rendered width
     const textWidth = 11.5
-    
+
     // Target: text should fill this ratio of screen width
     const targetScreenRatio = 1
-    
+
     // Camera FOV is 14 degrees
     const fovRad = (14 * Math.PI) / 180
-    
+
     // For perspective camera: visibleWidth = 2 * distance * tan(fov/2) * aspectRatio
     // Solving for distance: distance = textWidth / (targetScreenRatio * 2 * tan(fov/2) * aspectRatio)
-    
+
     const aspectRatio = width / height
     const baseZoom = textWidth / (targetScreenRatio * 2 * Math.tan(fovRad / 2) * aspectRatio)
-    
+
     // Clamp to reasonable values
     const finalZoom = Math.max(15, Math.min(baseZoom, 120))
-    
+
     // Text is at z=-2, so distance from camera to text is (finalZoom - (-2)) = finalZoom + 2
     // Set fog to start just before text and end after it
     const distanceToText = finalZoom + 2
     state.scene.fog.near = distanceToText - 5
     state.scene.fog.far = distanceToText + 10
-    
+
     // Text is at: group y=-1, VideoText y=1.3, z=-2 → world position (0, 0.3, -2)
     const textY = 0.3
     const textZ = -2
-    
+
     // On narrow screens we're far away, so camera should be near text level
     // On wide screens we're closer, so can be higher for a nice angle with reflection
     // Use aspect ratio to blend: portrait (narrow) = near text level, landscape = higher
     const maxCameraHeight = aspectRatio < 1 ? 0.8 : 3.0
     const cameraY = textY + maxCameraHeight
-    
+
     // Reduce mouse parallax on smaller screens
     const isMobile = width < 768
     const mouseMultiplier = isMobile ? 0.2 : 3
     const yMultiplier = isMobile ? 0.05 : 1
-    
+
     state.camera.position.lerp(vec.set(state.mouse.x * mouseMultiplier, cameraY + state.mouse.y * yMultiplier, finalZoom), 0.05)
     // Look at the text position
     state.camera.lookAt(0, textY, textZ)

@@ -9,11 +9,12 @@ body,
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Only hide horizontal scroll */
+  overflow-x: hidden;
+  /* Only hide horizontal scroll */
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: white;
   background: #101010;
   user-select: none;
@@ -64,7 +65,7 @@ body {
   justify-content: flex-end;
 }
 
-.menu > div {
+.menu>div {
   word-wrap: none;
   word-break: none;
   white-space: pre;
@@ -76,12 +77,12 @@ body {
   flex-direction: column;
 }
 
-.menu > div b {
+.menu>div b {
   font-weight: 600;
   color: #b0b0b0;
 }
 
-.fullscreen.ready > div {
+.fullscreen.ready>div {
   cursor: pointer;
 }
 
@@ -96,6 +97,7 @@ body {
   color: inherit;
   text-decoration: none;
 }
+
 .menu a:hover {
   text-decoration: underline;
   color: inherit;
@@ -105,6 +107,7 @@ body {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
@@ -120,12 +123,19 @@ canvas {
 
 /* Bounce animation for scroll indicator */
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: translateY(0) translateX(-50%);
   }
+
   40% {
     transform: translateY(-10px) translateX(-50%);
   }
+
   60% {
     transform: translateY(-5px) translateX(-50%);
   }
@@ -133,39 +143,39 @@ canvas {
 
 /* Responsive design for about section */
 @media (max-width: 768px) {
-  #about-section > div > div {
+  #about-section>div>div {
     grid-template-columns: 1fr !important;
     gap: 40px !important;
   }
-  
+
   #about-section h2 {
     font-size: 28px !important;
   }
-  
+
   #about-section h3 {
     font-size: 20px !important;
   }
-  
+
   #about-section h4 {
     font-size: 16px !important;
   }
-  
+
   #about-section {
     padding-left: 16px !important;
     padding-right: 16px !important;
     padding-top: 40px !important;
   }
-  
+
   #about-section p {
     font-size: 14px !important;
   }
-  
+
   /* Fix skills cards overflow */
   #about-section [style*="padding: 20px"] {
     padding: 14px !important;
     word-break: break-word !important;
   }
-  
+
   /* Fix achievements grid */
   #about-section [style*="minmax(300px"] {
     grid-template-columns: 1fr !important;
@@ -174,15 +184,15 @@ canvas {
 
 /* Footer responsive styles */
 @media (max-width: 768px) {
-  footer > div > div:first-child {
+  footer>div>div:first-child {
     grid-template-columns: 1fr !important;
     gap: 30px !important;
   }
-  
-  footer form > div {
+
+  footer form>div {
     grid-template-columns: 1fr !important;
   }
-  
+
   footer [style*="justify-content: space-between"] {
     flex-direction: column !important;
     gap: 10px !important;
@@ -196,30 +206,30 @@ canvas {
     top: 20px !important;
     right: 20px !important;
   }
-  
+
   .overlay-nav button {
     padding: 8px 16px !important;
     font-size: 12px !important;
   }
-  
+
   .scroll-indicator {
     font-size: 10px !important;
   }
-  
+
   .bottom-links {
     font-size: 11px !important;
   }
-  
+
   .bottom-links a,
-  .bottom-links > div {
+  .bottom-links>div {
     bottom: 20px !important;
   }
-  
+
   .bottom-links a {
     left: 20px !important;
   }
-  
-  .bottom-links > div:last-child {
+
+  .bottom-links>div:last-child {
     right: 20px !important;
   }
 }
@@ -229,15 +239,15 @@ canvas {
   #projects-section h2 {
     font-size: 32px !important;
   }
-  
+
   #projects-section h3 {
     font-size: 18px !important;
   }
-  
-  #projects-section > div {
+
+  #projects-section>div {
     padding: 0 20px !important;
   }
-  
+
   #projects-section [style*="minmax(min(400px"] {
     grid-template-columns: 1fr !important;
   }
